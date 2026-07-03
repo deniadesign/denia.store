@@ -1,1 +1,14 @@
-body{background:#111;color:#fff;font-family:Arial;text-align:center}img{max-width:90%;margin:10px;border-radius:10px}a{display:inline-block;padding:10px 16px;background:gold;color:#000;text-decoration:none}
+
+:root{--bg:#0f1115;--card:#1a1f27;--text:#fff}
+.light{--bg:#fff;--card:#eee;--text:#111}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui}
+nav,.hero,.catalog,.cart,footer{padding:24px}
+nav{display:flex;justify-content:space-between}
+.logo{display:flex;gap:12px;align-items:center}
+.logo img{width:50px}
+.hero{text-align:center;padding:90px 20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.card{background:var(--card);padding:15px;border-radius:18px}
+.card img{width:100%;height:280px;object-fit:cover;border-radius:12px}
+button,.wa{padding:12px;border:none;border-radius:12px}
+.promo{text-align:center;padding:10px;background:#d4af37;color:#111}

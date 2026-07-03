@@ -1,0 +1,1 @@
+Buka index.html. Admin sederhana ada di bawah. Tambah produk tersimpan di browser (localStorage). Tombol order ke WhatsApp.

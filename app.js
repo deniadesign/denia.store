@@ -1,0 +1,1 @@
+let items=[];function add(n){items.push(n);render()}function render(){document.getElementById('cart').innerHTML=items.map(i=>`<li>${i}</li>`).join('');document.getElementById('checkout').href='https://wa.me/6283822941348?text='+encodeURIComponent('Halo DeniaDesign, saya ingin pesan: '+items.join(', '));}

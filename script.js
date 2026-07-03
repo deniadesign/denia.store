@@ -1,8 +1,7 @@
-
 const sample=[
-{name:'Oversize Black',price:'149000'},
-{name:'Minimal White',price:'139000'},
-{name:'Street Edition',price:'159000'}
+{name:'DENIA Black',price:'120000'},
+{name:'DENIA Black',price:'130000'},
+{name:'limited Edition',price:'159000'}
 ];
 const cart=[];
 const el=document.getElementById('products');

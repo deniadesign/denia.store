@@ -1,7 +1,5 @@
 const sample=[
 {name:'DENIA Black',price:'120000'},
-{name:'DENIA Black',price:'130000'},
-{name:'limited Edition',price:'159000'}
 ];
 const cart=[];
 const el=document.getElementById('products');

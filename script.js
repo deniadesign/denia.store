@@ -1,24 +1,92 @@
-const sample=[
-{name:'DENIA Black',price:'120000'},
-];
-const cart=[];
-const el=document.getElementById('products');
-sample.forEach(p=>{
-el.innerHTML+=`<div class=card>
-<img src=product-placeholder.jpg>
-<h3>${p.name}</h3>
-<p>Rp ${p.price}</p>
-<button onclick="add('${p.name}','${p.price}')">Tambah Keranjang</button>
-</div>`;
+// =========================
+// DENIADESIGN - script.js
+// =========================
+
+// Smooth Scroll Menu
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', function(e) {
+
+        const target = this.getAttribute('href');
+
+        if(target.startsWith("#")){
+
+            e.preventDefault();
+
+            document.querySelector(target).scrollIntoView({
+                behavior:"smooth"
+            });
+
+        }
+
+    });
 });
-function add(n,p){cart.push({n,p});render();}
-function render(){
-document.getElementById('cart').innerHTML=
-cart.map(i=>`<li>${i.n} - Rp ${i.p}</li>`).join('');
+
+// Tombol Belanja Sekarang
+const btn = document.querySelector(".btn");
+
+if(btn){
+
+    btn.addEventListener("click", function(e){
+
+        e.preventDefault();
+
+        const produk = document.querySelector("#produk");
+
+        produk.scrollIntoView({
+            behavior:"smooth"
+        });
+
+    });
+
 }
-function checkout(){
-let msg='Halo DeniaDesign, saya ingin pesan:%0A';
-cart.forEach(i=>msg+=`- ${i.n} Rp ${i.p}%0A`);
-window.open('https://wa.me/6283822941348?text='+msg);
-}
-function toggleTheme(){document.body.classList.toggle('light')}
+
+// Animasi Card Saat Scroll
+const cards = document.querySelectorAll(".card");
+
+const observer = new IntersectionObserver(entries=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.style.opacity="1";
+            entry.target.style.transform="translateY(0)";
+        }
+
+    });
+
+},{
+    threshold:0.2
+});
+
+cards.forEach(card=>{
+
+    card.style.opacity="0";
+    card.style.transform="translateY(40px)";
+    card.style.transition="0.6s";
+
+    observer.observe(card);
+
+});
+
+// Efek Header Saat Scroll
+const header = document.querySelector("header");
+
+window.addEventListener("scroll",()=>{
+
+    if(window.scrollY>50){
+
+        header.style.background="#111";
+        header.style.position="fixed";
+        header.style.width="100%";
+        header.style.top="0";
+        header.style.zIndex="999";
+
+    }else{
+
+        header.style.background="transparent";
+        header.style.position="relative";
+
+    }
+
+});
